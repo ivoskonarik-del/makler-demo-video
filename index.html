@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="sk"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Veronika Živčáková · realitná maklérka · JKV GROUP s. r. o.</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="Ukážka osobného webu makléra s videom na pozadí.">
+<style>
+@font-face{font-family:Manrope;src:url(assets/Manrope-latin-ext.woff2) format("woff2");font-weight:200 800;font-display:swap;unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:Manrope;src:url(assets/Manrope-latin.woff2) format("woff2");font-weight:200 800;font-display:swap}
+:root{--accent:#18384f;--ink:#14202b;--muted:#5b6773;--paper:#f7f6f2;--glass:rgba(255,255,255,.42);--glass-line:rgba(255,255,255,.62);--r:18px;color-scheme:light}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:Manrope,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#d9d5cc;line-height:1.55;font-size:16px}
+.video{position:fixed;inset:0;z-index:0;overflow:hidden;background:#d9d5cc}
+.video video,.video img{width:100%;height:100%;object-fit:cover;display:block}
+.video::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,.04) 40%,rgba(20,32,43,.28))}
+.obsah{position:relative;z-index:1}
+.in{width:min(1180px,100% - 32px);margin-inline:auto}
+.glass{background:var(--glass);border:1px solid var(--glass-line);border-radius:var(--r);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 24px 60px -30px rgba(20,32,43,.45)}
+.pevny{background:var(--paper);border-radius:var(--r);box-shadow:0 30px 70px -40px rgba(20,32,43,.5)}
+.top{position:sticky;top:0;z-index:5;padding:12px 0}
+.top .glass{display:flex;align-items:center;gap:20px;padding:10px 14px 10px 18px;border-radius:999px}
+.top img{height:30px;width:auto;max-width:150px;object-fit:contain;display:block}
+.top nav{display:flex;gap:4px;margin-left:auto}
+.top nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:14px;padding:8px 12px;border-radius:999px}
+.top nav a:hover{background:rgba(255,255,255,.55)}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:12px 20px;font-weight:700;font-size:14px;text-decoration:none;transition:transform .15s,background .2s}
+.btn:active{transform:scale(.98)}
+.btn--a{background:var(--accent);color:#fff}.btn--a:hover{background:color-mix(in srgb,var(--accent) 85%,#000)}
+.btn--g{background:rgba(255,255,255,.55);color:var(--ink);border:1px solid var(--glass-line)}.btn--g:hover{background:rgba(255,255,255,.8)}
+.hero{min-height:calc(100dvh - 70px);display:grid;align-items:end;padding:40px 0 48px}
+.hero .glass{max-width:620px;padding:34px 36px}
+.hero .kdo{font-size:13px;font-weight:700;letter-spacing:.02em;color:var(--muted);margin:0 0 14px}
+.hero h1{font-size:clamp(2rem,4.6vw,3.5rem);line-height:1.04;letter-spacing:-.025em;margin:0 0 16px;font-weight:800}
+.hero p{margin:0 0 24px;font-size:1.05rem;color:var(--ink);max-width:48ch}
+.hero .cta{display:flex;gap:10px;flex-wrap:wrap}
+section{padding:36px 0}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.rv.in-view{opacity:1;transform:none}
+h2{font-size:clamp(1.5rem,2.6vw,2.1rem);letter-spacing:-.02em;line-height:1.1;margin:0 0 6px;font-weight:800}
+.pod{margin:0 0 24px;color:var(--muted)}
+.ponuka{padding:36px}
+.mriz{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.karta{display:block;text-decoration:none;color:var(--ink);background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 1px 0 rgba(20,32,43,.06);transition:transform .2s}
+.karta:hover{transform:translateY(-3px)}
+.karta img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#e6e2da}
+.karta__t{padding:12px 14px 14px;display:grid;gap:3px}
+.karta__t b{font-size:1.05rem;color:var(--accent)}.karta__t span{font-size:.92rem;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.karta__t small{color:var(--muted)}
+.omne{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+.omne .glass{padding:32px}
+.omne p{margin:0 0 12px;max-width:60ch}
+.fakta{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+.fakta li{display:grid;gap:2px}.fakta b{font-size:1.5rem;letter-spacing:-.02em}.fakta span{color:var(--muted);font-size:.9rem}
+.kontakt .glass{padding:36px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.kontakt .cta{display:flex;gap:10px;flex-wrap:wrap}
+.kontakt p{margin:6px 0 0;color:var(--muted)}
+footer{padding:28px 0 40px}
+footer .pevny{background:var(--accent);color:#fff;padding:24px 32px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;border-radius:var(--r)}
+footer a{color:#fff}
+@media(max-width:900px){.mriz{grid-template-columns:repeat(2,minmax(0,1fr))}.omne{grid-template-columns:1fr}.kontakt .glass{grid-template-columns:1fr}.top nav{display:none}.hero{align-items:center}.hero .glass{padding:26px 22px}.ponuka{padding:22px}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.karta{transition:none}}
+@media(prefers-reduced-transparency:reduce){.glass{background:rgba(255,255,255,.96);backdrop-filter:none;-webkit-backdrop-filter:none}}
+</style></head>
+<body>
+<div class="video" aria-hidden="true">
+  <video autoplay muted loop playsinline preload="metadata" poster="assets/poster.jpg"><source src="assets/pozadi.mp4" type="video/mp4"></video>
+</div>
+<div class="obsah">
+<header class="top"><div class="in"><div class="glass">
+  <img src="assets/logo.svg" alt="JKV GROUP s. r. o.">
+  <nav><a href="#ponuka">Ponuka</a><a href="#omne">O mne</a><a href="#kontakt">Kontakt</a></nav>
+  <a class="btn btn--a" href="https://wa.me/421911382381">WhatsApp</a>
+</div></div></header>
+
+<section class="hero"><div class="in"><div class="glass rv in-view">
+  <p class="kdo">Veronika Živčáková · realitná maklérka · JKV GROUP s. r. o.</p>
+  <h1>Nehnuteľnosti v Košiciach, ktoré poznám osobne.</h1>
+  <p>8 aktuálnych ponúk, odhad ceny zadarmo a obhliadky aj večer či cez víkend. Lokality Košice, Obišovce, Prešov, Vyšná Kamenica.</p>
+  <div class="cta"><a class="btn btn--a" href="#ponuka">Pozrieť ponuku</a><a class="btn btn--g" href="tel:+421911382381">Zavolať</a></div>
+</div></div></section>
+
+<section id="ponuka"><div class="in"><div class="pevny ponuka rv">
+  <h2>Aktuálna ponuka</h2><p class="pod">Byty, domy a pozemky v Košiciach a okolí. Každá ponuka sa aktualizuje priamo z portálu.</p>
+  <div class="mriz"><a class="karta" href="https://www.zoznamrealit.sk/pozemok-1066m2-obisovce-1050594" target="_blank" rel="noopener">
+  <img src="https://www.zoznamrealit.sk/fotky/1920x1920x2/211/1050594_d895bd4c4f19e2de80e5c21cd0f88c94.jpg" alt="" loading="lazy">
+  <div class="karta__t"><b>68 999 €</b><span>Pozemok 1066m2, Obišovce</span><small>Obišovce · 1066 m²</small></div>
+</a>
+<a class="karta" href="https://www.zoznamrealit.sk/3-izbovy-byt-75m2-lodzia-kosice-tahanovce-1050595" target="_blank" rel="noopener">
+  <img src="https://www.zoznamrealit.sk/fotky/1920x1920x2/211/1050595_0168decc0ca3c3ae511db9abd29d67a8.jpg" alt="" loading="lazy">
+  <div class="karta__t"><b>189 990 €</b><span>3 izbový byt, 75m2, lodžia, Košice-Ťahanovce</span><small>Košice · 3-izbový · 72 m²</small></div>
+</a>
+<a class="karta" href="https://www.zoznamrealit.sk/3-izbovy-byt-73m2-lodzia-kosice-juh-1050597" target="_blank" rel="noopener">
+  <img src="https://www.zoznamrealit.sk/fotky/1920x1920x2/211/1050597_27c6694908bb2fbabfe276301313bc9c.jpg" alt="" loading="lazy">
+  <div class="karta__t"><b>289 000 €</b><span>3 Izbový byt, 73m2, lodžia, Košice Juh</span><small>Košice · 3-izbový · 73 m²</small></div>
+</a>
+<a class="karta" href="https://www.zoznamrealit.sk/na-predaj-zahrada-674-m2-vysna-kamenica-1050598" target="_blank" rel="noopener">
+  <img src="https://www.zoznamrealit.sk/fotky/1920x1920x2/211/1050598_0f4398a23c6f9d5b2f207f04b8dd3209.jpg" alt="" loading="lazy">
+  <div class="karta__t"><b>63 660 €</b><span>Na predaj záhrada 674 m² – Vyšná Kamenica</span><small>Vyšná Kamenica · 674 m²</small></div>
+</a>
+<a class="karta" href="https://www.zoznamrealit.sk/predaj-ornej-pody-4-027-m2-k-u-drienov-okres-preso-1050599" target="_blank" rel="noopener">
+  <img src="https://www.zoznamrealit.sk/fotky/1920x1920x2/211/1050599_a743e606de1bb2a4788bedb3e3588804.jpg" alt="" loading="lazy">
+  <div class="karta__t"><b>12 999 €</b><span>Predaj ornej pôdy 4 027 m² – k.ú. Drienov (okres Prešov)</span><small>Drienov · 4027 m²</small></div>
+</a>
+<a class="karta" href="https://www.zoznamrealit.sk/predaj-kompletne-zrekonstruovany-1-5-izbovy-byt-v-1050600" target="_blank" rel="noopener">
+  <img src="https://www.zoznamrealit.sk/fotky/1920x1920x2/211/1050600_d7e8947a17e528c3ff2a65d16ce2021b.jpg" alt="" loading="lazy">
+  <div class="karta__t"><b>163 000 €</b><span>Predaj: Kompletne zrekonštruovaný 1,5-izbový byt v Košiciach na KVP</span><small>Košice · 1-izbový · 35 m²</small></div>
+</a>
+<a class="karta" href="https://www.zoznamrealit.sk/predam-1-izbovy-byt-po-kompletnej-rekonstrukcii-ko-1050601" target="_blank" rel="noopener">
+  <img src="https://www.zoznamrealit.sk/fotky/1920x1920x2/211/1050601_2388f1abe14386117b19c48d0f85e941.jpg" alt="" loading="lazy">
+  <div class="karta__t"><b>168 000 €</b><span>Predám 1-izbový byt po kompletnej rekonštrukcii – Košice</span><small>Košice · 1-izbový · 40 m²</small></div>
+</a>
+<a class="karta" href="https://www.zoznamrealit.sk/na-predaj-4-izbovy-rodinny-dom-v-obci-rozhanovce-1050602" target="_blank" rel="noopener">
+  <img src="https://www.zoznamrealit.sk/fotky/1920x1920x2/211/1050602_0cafc4965f9dbb495ba11801967c7cc7.jpg" alt="" loading="lazy">
+  <div class="karta__t"><b>307 900 €</b><span>Na predaj 4-izbový rodinný dom v obci Rozhanovce</span><small>Rozhanovce · 125 m²</small></div>
+</a></div>
+</div></div></section>
+
+<section id="omne"><div class="in"><div class="omne">
+  <div class="glass rv"><h2>O mne</h2>
+    <p>Som Veronika Živčáková, realitná maklérka kancelárie JKV GROUP s. r. o.. Predaj, prenájom a odhad ceny nehnuteľností v Košickom kraji.</p>
+    <p>Najprv poctivý odhad ceny a jasný plán, až potom inzerát. O každom kroku viete dopredu, od obhliadky po odovzdanie kľúčov.</p>
+  </div>
+  <div class="glass rv"><ul class="fakta">
+    <li><b>8</b><span>aktívnych ponúk</span></li>
+    <li><b>Košice</b><span>hlavná lokalita</span></li>
+    <li><b>Zadarmo</b><span>odhad trhovej ceny</span></li>
+  </ul></div>
+</div></div></section>
+
+<section id="kontakt" class="kontakt"><div class="in"><div class="glass rv">
+  <div><h2>Uvažujete o predaji alebo kúpe?</h2><p>Ozvite sa, ešte dnes sa Vám ozvem späť.</p></div>
+  <div class="cta"><a class="btn btn--a" href="https://wa.me/421911382381">WhatsApp</a><a class="btn btn--g" href="mailto:zivcakova@jkvreal.sk">zivcakova@jkvreal.sk</a></div>
+</div></div></section>
+
+<footer><div class="in"><div class="pevny"><span>Veronika Živčáková · JKV GROUP s. r. o. · Tallerova 4, 81102 Bratislava - Staré Mesto</span><span>Ukážka Web Hunter · video na pozadí · <a href="admin/">Admin</a></span></div></div></footer>
+</div>
+<script>
+(function(){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in-view');io.unobserve(x.target)}})},{rootMargin:'0px 0px -10% 0px'});document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+var v=document.querySelector('video');document.addEventListener('visibilitychange',function(){document.hidden?v.pause():v.play()})})();
+</script>
+</body></html>
